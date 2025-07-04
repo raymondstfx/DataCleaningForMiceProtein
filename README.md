@@ -7,14 +7,35 @@ This repository contains preprocessing code and datasets used for classification
 ### 1. `BinaryClass.py`
 - Python script used to:
   - Rename the `Class` column to `target`.
-  - Convert the original multi-class labels into a binary classification label.
+  - Convert the original multi-class labels into a binary classification label. (see "Label Mapping" below)
 - This script was used to prepare the dataset for the **second run**.
+
+#### Label Mapping
+
+In `BinaryClass.py`, the original 8 class labels from the `Class` column are mapped to binary labels as follows:
+
+| Original Label  | Binary Label |
+|-----------------|--------------|
+| `b'c-SC-s'`     | `0`          |
+| `b'c-SC-m'`     | `0`          |
+| `b't-SC-s'`     | `0`          |
+| `b't-SC-m'`     | `0`          |
+| `b't-CS-s'`     | `0`          |
+| `b'c-CS-s'`     | `1`          |
+| `b'c-CS-m'`     | `1`          |
+| `b't-CS-m'`     | `1`          |
+
+### Purpose
+
+We considered all mice that were shocked to learn as the group of interest, excluding DS model mice that did not receive memantine treatment, as this selection strategy could theoretically better distinguish between mice that successfully learned and those that did not.
 
 ### 2. `DataNoClass.csv`
 - Dataset used for the **first run**.
 - The `Class` column was removed to avoid influencing the results.
 - The `Behavior` column was used as the target variable.
-- Although originally processed with Python, the changes were simple and can also be done in Excel, so the code was not saved.
+
+In the first run, we used “Behavior” as the target variable to determine whether the mouse was stimulated to learn through shock. This helped us assess whether protein expression is related to learning performance and identify key proteins involved. We removed the “Class” column to avoid overly accurate predictions caused by its influence.
+
 
 ### 3. `DataSecond.csv`
 - Dataset used for the **second run**.
