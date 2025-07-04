@@ -1,6 +1,4 @@
-# Data Cleaning For Mice Protein
-
-This repository contains preprocessing code and datasets used for classification tasks based on the Mice Protein dataset.
+# Data Cleaning For MiceProtein dataset
 
 ## Files Included
 
